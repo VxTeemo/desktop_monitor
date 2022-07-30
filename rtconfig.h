@@ -279,10 +279,6 @@
 
 /* end of enhanced kernel services */
 
-/* POSIX extension functions */
-
-/* end of POSIX extension functions */
-
 /* acceleration: Assembly language or algorithmic acceleration packages */
 
 /* end of acceleration: Assembly language or algorithmic acceleration packages */
@@ -294,6 +290,8 @@
 /* Micrium: Micrium software products porting for RT-Thread */
 
 /* end of Micrium: Micrium software products porting for RT-Thread */
+#define PKG_USING_CHERRYUSB
+#define PKG_USING_CHERRYUSB_LATEST_VERSION
 /* end of system packages */
 
 /* peripheral libraries and drivers */

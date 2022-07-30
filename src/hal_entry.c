@@ -12,6 +12,8 @@
 #include <rtthread.h>
 #include "hal_data.h"
 #include <rtdevice.h>
+#include <string.h>
+#include <stdio.h>
 
 #define LED3_PIN    BSP_IO_PORT_01_PIN_06
 #define USER_INPUT  "P105"
@@ -92,3 +94,18 @@ void icu_sample(void)
     }
 }
 MSH_CMD_EXPORT(icu_sample, icu sample);
+
+
+void dm(int argc, char **argv)
+{
+    int cpu_usage, mem_usage;
+    sscanf(argv[1], "%d", &cpu_usage);
+    sscanf(argv[2], "%d", &mem_usage);
+    rt_kprintf("CPU %d MEM %d\n", cpu_usage, mem_usage);
+
+    display_dac(1, cpu_usage);
+    display_dac(0, mem_usage);
+}
+MSH_CMD_EXPORT(dm, desktop monitor);
+
+
